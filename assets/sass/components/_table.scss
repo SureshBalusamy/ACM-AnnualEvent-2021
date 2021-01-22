@@ -15,7 +15,7 @@ table {
     td {
         // text-align: center;
         font-size: 0.7em;
-        font-weight: 600;
+        font-weight: 700;
         padding: 0.5em 1em 0.5em 1em;
     }
 
@@ -30,6 +30,7 @@ table {
         background: #444;
         color: #fff;
     }
+
     header {
         background: #444;
         color: #fff;
@@ -37,5 +38,71 @@ table {
 
     tfoot {
         background: #eee;
+    }
+}
+
+@include breakpoint('<=mobile') {
+
+    /* Force table to not be like tables anymore */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        display: none;
+
+        &:first-child {
+            display: block;
+        }
+    }
+
+    // tr { border: 1px solid #ccc; }
+
+    tbody tr td {
+        @include vendor('display', 'flex');
+
+        // @include vendor('flex', 'no-wrap');
+        &:first-child {
+            font-size: 12pt;
+        }
+
+        &:nth-child(2) {
+            float: right;
+        }
+
+        &:nth-child(3) {
+            font-size: 10pt;
+            padding-left: 15px;
+        }
+    }
+
+    td {
+        // @include vendor('flex-grow', '1');
+        // @include vendor('align-items', 'center');
+        // @include vendor('justify-content', 'center');
+
+
+        /* Behave  like a "row" */
+        // border: none;
+        // border-bottom: 1px solid #eee; 
+        // position: relative;
+        // padding-left: 50%;
+    }
+
+    td:before {
+        /* Now like a table header */
+        // position: absolute;
+        // /* Top/left values mimic padding */
+        // top: 6px;
+        // left: 6px;
+        // width: 45%;
+        // padding-right: 10px;
+        // white-space: nowrap;
     }
 }

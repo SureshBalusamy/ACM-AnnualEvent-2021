@@ -1,8 +1,6 @@
 @charset "UTF-8";
 @import url("fontawesome-all.min.css");
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600");
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&display=swap");
 /*
 	Prologue by HTML5 UP
 	html5up.net | @ajlkn
@@ -1494,7 +1492,7 @@ table tbody tr:nth-child(2n+2) {
 }
 table td {
   font-size: 0.7em;
-  font-weight: 600;
+  font-weight: 700;
   padding: 0.5em 1em 0.5em 1em;
 }
 table th {
@@ -1515,6 +1513,50 @@ table tfoot {
   background: #eee;
 }
 
+@media screen and (max-width: 736px) {
+  /* Force table to not be like tables anymore */
+  table,
+thead,
+tbody,
+th,
+td,
+tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    display: none;
+  }
+  thead tr:first-child {
+    display: block;
+  }
+
+  tbody tr td {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+  }
+  tbody tr td:first-child {
+    font-size: 12pt;
+  }
+  tbody tr td:nth-child(2) {
+    float: right;
+  }
+  tbody tr td:nth-child(3) {
+    font-size: 10pt;
+    padding-left: 15px;
+  }
+
+  td {
+    /* Behave  like a "row" */
+  }
+
+  td:before {
+    /* Now like a table header */
+  }
+}
 /* Button */
 input[type=button],
 input[type=submit],
@@ -1824,7 +1866,10 @@ ul.icons a {
 /* Wide */
 @media screen and (min-width: 961px) and (max-width: 1880px) {
   /* Basic */
-  body, input, textarea, select {
+  body,
+input,
+textarea,
+select {
     font-size: 17pt;
   }
 
@@ -1856,7 +1901,10 @@ ul.icons a {
 /* Narrow */
 @media screen and (min-width: 961px) and (max-width: 1320px) {
   /* Basic */
-  body, input, textarea, select {
+  body,
+input,
+textarea,
+select {
     font-size: 16pt;
   }
 
@@ -1915,11 +1963,15 @@ ul.icons a {
 
 @media screen and (max-width: 960px) {
   /* Basic */
-  html, body {
+  html,
+body {
     overflow-x: hidden;
   }
 
-  body, input, textarea, select {
+  body,
+input,
+textarea,
+select {
     font-size: 16pt;
   }
 
@@ -2091,7 +2143,10 @@ ul.icons a {
 /* Mobile */
 @media screen and (max-width: 736px) {
   /* Basic */
-  body, input, textarea, select {
+  body,
+input,
+textarea,
+select {
     font-size: 14pt;
   }
 
