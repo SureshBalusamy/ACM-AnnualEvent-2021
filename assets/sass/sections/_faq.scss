@@ -2,6 +2,7 @@
     @include vendor('display', 'flex');
     @include vendor('flex-flow', 'column');
     @include vendor('justify-content', 'center');
+
     // padding: 1em;
     h3 {
         padding: 0.5em;
@@ -10,4 +11,52 @@
             padding-right: 0.5em;
         }
     }
+
+    .faq-item {
+        @include vendor('display', 'flex');
+        @include vendor('flex-flow', 'column');
+        @include vendor('justify-content', 'flex-start');
+        cursor: pointer;
+        margin-top: 1em;
+        padding: 1em;
+        box-shadow: 0px 10px 25px -12px rgba(0, 0, 0, 0.63);
+        -webkit-box-shadow: 0px 10px 25px -12px rgba(0, 0, 0, 0.63);
+        -moz-box-shadow: 0px 10px 25px -12px rgba(0, 0, 0, 0.63);
+        border-radius: _size(border-radius);
+
+        .q {
+            font-size: 14pt;
+            line-height: 1.6;
+        }
+
+        .ans {
+            @include vendor('display', 'flex');
+            @include vendor('flex-flow', 'column');
+            @include vendor('justify-content', 'center');
+            border-radius: _size(border-radius);
+            background-color: #e8edec;
+            width: 100%;
+            overflow: hidden;
+            height: 0px;
+            font-size: 0.7em;
+            @include vendor('transition', ('height 0.7s ease-in-out'));
+        }
+    }
+
+    .faq-item:hover,
+    .faq-item:active {
+        .ans {
+            height: 120px;
+        }
+    }
+
+    @include breakpoint('<=mobile') {
+        .faq-item:hover,
+        .faq-item:active {
+            .ans {
+                height: 230px;
+            }
+        }
+    }
+
 }

@@ -5,14 +5,16 @@ $misc: (z-index-base: 10000);
 $duration: (header: 0.5s);
 
 // Size.
-$size: (header: 275px);
+$size: (
+    header: 275px,
+    border-radius: 10px,
+);
 
 // Font.
-$font: (
-    // family: ('Source Sans Pro', sans-serif),
+$font: ( // family: ('Source Sans Pro', sans-serif),
     // family: ('Roboto Slab', serif),
     family: ('Comfortaa', cursive),
-    );
+);
 
 // Palette.
 $palette: ();
