@@ -1382,6 +1382,12 @@ article > .container, article:last-child {
   width: 48px;
   height: 48px;
 }
+.image.acm {
+  width: 100%;
+}
+.image.acm img {
+  width: 100%;
+}
 .image.fit {
   display: block;
   width: 100%;
@@ -1754,6 +1760,7 @@ ul.icons a {
   position: relative;
   margin: 1.75em 1.5em 1.5em 1.5em;
   min-height: 48px;
+  height: 50px;
   cursor: default;
 }
 #logo h1 {
