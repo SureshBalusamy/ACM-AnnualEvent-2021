@@ -2,7 +2,7 @@
     @include vendor('display', 'flex');
     @include vendor('flex-flow', 'column');
     @include vendor('justify-content', 'center');
-
+    // padding: 1em;
     h3 {
         padding: 0.5em;
 
