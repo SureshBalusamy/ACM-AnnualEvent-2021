@@ -1,0 +1,69 @@
+/* Row */
+
+.row {
+    @include html-grid((40px, 40px));
+
+    @include breakpoint('wide') {
+        @include html-grid((40px, 40px), 'wide');
+    }
+
+    @include breakpoint('normal') {
+        @include html-grid((40px, 40px), 'normal');
+    }
+
+    @include breakpoint('narrow') {
+        @include html-grid((20px, 20px), 'narrow');
+    }
+
+    @include breakpoint('<=narrower') {
+        @include html-grid((20px, 20px), 'narrower');
+    }
+
+    @include breakpoint('<=mobile') {
+        @include html-grid((20px, 20px), 'mobile');
+    }
+}
+
+/* Container */
+
+.container {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 1400px;
+
+    @include breakpoint('wide') {
+        width: 1200px;
+    }
+
+    @include breakpoint('normal') {
+        width: 960px;
+    }
+
+    @include breakpoint('narrow') {
+        width: 100%;
+    }
+
+    @include breakpoint('<=narrower') {
+        width: 100%;
+    }
+
+    @include breakpoint('<=mobile') {
+        width: 100%;
+    }
+}
+
+/* Sections/Article */
+
+section, article {
+    margin-bottom: 3em;
+
+    > :last-child,
+    > .container,
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .row > & {
+        margin-bottom: 0;
+    }
+}
