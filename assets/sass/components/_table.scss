@@ -13,6 +13,9 @@ table {
     }
 
     td {
+        // @include vendor('display', 'flex');
+        // @include vendor('justify-content', 'center');
+        font-size: 0.8em;;
         padding: 0.5em 1em 0.5em 1em;
     }
 
@@ -24,6 +27,10 @@ table {
     }
 
     thead {
+        background: #444;
+        color: #fff;
+    }
+    header {
         background: #444;
         color: #fff;
     }

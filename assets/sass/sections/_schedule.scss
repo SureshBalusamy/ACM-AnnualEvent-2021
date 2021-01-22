@@ -1,0 +1,19 @@
+#schedule .container {
+    @include vendor('display', 'flex');
+    @include vendor('flex-flow', 'column');
+    @include vendor('justify-content', 'center');
+
+    h3 {
+        padding: 0.5em;
+
+        span {
+            padding-right: 0.5em;
+        }
+    }
+
+    table {
+        -webkit-box-shadow: 0px 14px 43px -19px rgba(0, 0, 0, 0.64);
+        -moz-box-shadow: 0px 14px 43px -19px rgba(0, 0, 0, 0.64);
+        box-shadow: 0px 14px 43px -19px rgba(0, 0, 0, 0.64);
+    }
+}
