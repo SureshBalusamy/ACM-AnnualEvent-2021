@@ -14,6 +14,7 @@
         .container {
             backdrop-filter: blur(8px);
         }
+
         &.dark {
             color: #ddd;
             color: rgba(255, 255, 255, 0.75);
@@ -67,6 +68,10 @@
 
         &.five {
             background-color: #ecf1f1;
+        }
+
+        &.six {
+            background-color: #e8edec;
         }
     }
 }
