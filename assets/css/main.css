@@ -1871,7 +1871,7 @@ ul.icons a {
   text-align: center;
 }
 #main > section .container {
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(3px);
 }
 #main > section.dark {
   color: #ddd;
