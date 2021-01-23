@@ -57,7 +57,8 @@
 					<h2 class="alt">ACM India Annual Event</h2>
 					<!-- <span class="image"><img src="images/acm-logo.png" alt="" /></span> -->
 					<span>Co-located with
-					<h3>ARCS 2021</h3> & PSG College of Technology</span>
+						<h3>ARCS 2021</h3> & PSG College of Technology
+					</span>
 				</header>
 				<footer>
 					<a href="#" class="button scrolly">Register Now!</a>
@@ -114,22 +115,22 @@
 					<h3><span class="icon solid fa-user-ninja"></span>Speakers</h3>
 				</header>
 				<div class="panel">
-					<a class="speaker" href="#modal-1" rel="modal:open">
+					<a class="speaker" href="#modal-1" data-modal>
 						<img src="images/edwin_catmull.jpeg" alt="Edwin Catmull" />
 						<h5>Edwin Catmull</h5>
 						<p>Co-founder Pixar and former President, Walt Disney Animation Studios</p>
 					</a>
-					<a class="speaker" href="#modal-2" rel="modal:open">
+					<a class="speaker" href="#modal-2" data-modal>
 						<img src="images/amanda_randles.jpeg" alt="Amanda Randles" />
 						<h5>Amanda Randles</h5>
 						<p>Duke University, USA</p>
 					</a>
-					<a class="speaker" href="#modal-3" rel="modal:open">
+					<a class="speaker" href="#modal-3" data-modal>
 						<img src="images/kurt_mehlhorn.jpeg" alt="Kurt Mehlhorn" />
 						<h5>Kurt Mehlhorn</h5>
 						<p>Director, Max Planck Institute for Informatics, Germany</p>
 					</a>
-					<a class="speaker" href="#modal-4" rel="modal:open">
+					<a class="speaker" href="#modal-4" data-modal>
 						<img src="images/milind_sohoni.jpeg" alt="Milind Sohoni" />
 						<h5>Milind Sohoni</h5>
 						<p>Dept. of Computer Science &amp; Engineering
@@ -375,29 +376,18 @@
 	<script type="text/javascript" charset="utf-8">
 		// Modal
 		$(function () {
-			function log_modal_event(event, modal) {
-				if (typeof console != 'undefined' && console.log) console.log("[event] " + event.type);
-			};
-
-			$(document).on($.modal.BEFORE_BLOCK, log_modal_event);
-			$(document).on($.modal.BLOCK, log_modal_event);
-			$(document).on($.modal.BEFORE_OPEN, log_modal_event);
-			$(document).on($.modal.OPEN, log_modal_event);
-			$(document).on($.modal.BEFORE_CLOSE, log_modal_event);
-			$(document).on($.modal.CLOSE, log_modal_event);
-			$(document).on($.modal.AFTER_CLOSE, log_modal_event);
-			$(document).on($.modal.AJAX_SEND, log_modal_event);
-			$(document).on($.modal.AJAX_SUCCESS, log_modal_event);
-			$(document).on($.modal.AJAX_COMPLETE, log_modal_event);
 
 			$('a[data-modal]').on('click', function () {
-				$($(this).data('modal')).modal();
+				$($(this).data('modal')).modal({
+					fadeDuration: 250
+				});
 				return false;
 
 			});
-			$('a[href="#ex1"].open-modal').click(function (event) {
+
+			$('a[data-modal]').click(function (event) {
 				$(this).modal({
-					fadeDuration: 250
+					fadeDuration: 350
 				});
 				return false;
 			});
