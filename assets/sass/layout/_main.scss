@@ -12,23 +12,27 @@
         text-align: center;
 
         // .container {
-            // backdrop-filter: blur(3px);
+        //     backdrop-filter: blur(4px);
         // }
 
         &.dark {
             color: #ddd;
             color: rgba(255, 255, 255, 0.75);
 
+            span,
             h2,
             h3,
             h4,
             h5,
             h6 {
+                text-shadow: black 0px 0px 12px;
                 color: inherit;
             }
 
             strong {
                 color: #fff;
+                // text-shadow: black 0px 0px 10px;
+
                 border-color: inherit;
             }
 
@@ -52,7 +56,8 @@
             color: #fff;
             max-height: 600px;
             background-image: url('../../images/banner.jpg');
-            filter: grayscale(100%)
+            // filter: grayscale(100%);
+            // filter: blur(4px);
         }
 
         &.two {
