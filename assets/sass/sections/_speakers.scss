@@ -6,8 +6,10 @@
     header {
         margin: 0;
     }
+
     h3 {
         padding: 0.5em;
+
         span {
             padding-right: 0.5em;
         }
@@ -32,20 +34,30 @@
             @include vendor('flex-direction', 'column');
             @include vendor('align-items', 'center');
             @include vendor('justify-content', 'center');
-
+            opacity: 1;
+            color: black;
             // padding: 0.8em;
             text-align: center;
             min-height: 315px;
+            border-bottom: 0;
 
             img {
-                box-shadow: 0px 10px 25px -12px rgba(0, 0, 0, 0.63);
-                -webkit-box-shadow: 0px 10px 25px -12px rgba(0, 0, 0, 0.63);
-                -moz-box-shadow: 0px 10px 25px -12px rgba(0, 0, 0, 0.63);
+                @include vendor('transition', ('background-color 0.7s ease-in-out',
+                        'box-shadow 0.7s ease-in-out'));
+                @include vendor('box-shadow', '0px 10px 25px -12px rgba(0, 0, 0, 0.63)');
+                // box-shadow: 0px 10px 25px -12px rgba(0, 0, 0, 0.63);
+                // -webkit-box-shadow: 0px 10px 25px -12px rgba(0, 0, 0, 0.63);
+                // -moz-box-shadow: 0px 10px 25px -12px rgba(0, 0, 0, 0.63);
                 width: 200px;
                 height: 200px;
                 border-radius: 50%;
                 padding: 0.2em;
                 margin-bottom: 10px;
+            }
+
+            img:hover {
+                @include vendor('box-shadow', '0px 20px 45px -12px rgba(0, 0, 0, 0.63)');
+                background-color: #8ebebc;
             }
 
             p {
@@ -57,6 +69,11 @@
                 padding: 0;
                 margin: 0;
                 max-height: 30px;
+            }
+
+            p:hover {
+                color: black;
+                text-decoration: none;
             }
         }
     }

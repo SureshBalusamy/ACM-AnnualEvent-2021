@@ -6,6 +6,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+
 </head>
 
 <body class="is-preload">
@@ -113,27 +114,27 @@
 					<h3><span class="icon solid fa-user-ninja"></span>Speakers</h3>
 				</header>
 				<div class="panel">
-					<a class="speaker">
+					<a class="speaker" href="#modal-1" rel="modal:open">
 						<img src="images/edwin_catmull.jpeg" alt="Edwin Catmull" />
 						<h5>Edwin Catmull</h5>
 						<p>Co-founder Pixar and former President, Walt Disney Animation Studios</p>
 					</a>
-					<div class="speaker">
+					<a class="speaker" href="#modal-2" rel="modal:open">
 						<img src="images/amanda_randles.jpeg" alt="Amanda Randles" />
 						<h5>Amanda Randles</h5>
 						<p>Duke University, USA</p>
-					</div>
-					<div class="speaker">
+					</a>
+					<a class="speaker" href="#modal-3" rel="modal:open">
 						<img src="images/kurt_mehlhorn.jpeg" alt="Kurt Mehlhorn" />
 						<h5>Kurt Mehlhorn</h5>
 						<p>Director, Max Planck Institute for Informatics, Germany</p>
-					</div>
-					<div class="speaker">
+					</a>
+					<a class="speaker" href="#modal-4" rel="modal:open">
 						<img src="images/milind_sohoni.jpeg" alt="Milind Sohoni" />
 						<h5>Milind Sohoni</h5>
 						<p>Dept. of Computer Science &amp; Engineering
 							IIT Bombay</p>
-					</div>
+					</a>
 				</div>
 			</div>
 		</section>
@@ -272,16 +273,58 @@
 
 	</div>
 
-	<!-- <div id="#speaker1-modal" class="modal-window">
-		<div>
-		  <a href="#" title="Close" class="modal-close">Close</a>
-		  <h1>Voilà!</h1>
-		  <div>A CSS-only modal based on the :target pseudo-class. Hope you find it helpful.</div>
-		  <div><small>Check out</small></div>
-		  <a href="https://aminoeditor.com" target="_blank">👉 Amino: Live CSS Editor for Chrome</div>
-		  </div>
-	  </div> -->
+	<!-- Modals -->
 
+	<div id="modal-1" class="modal">
+		<h3>
+			Edwin Catmull
+		</h3>
+		<hr>
+		<p>Early in life, Edwin Catmull found inspiration in Disney movies such as Peter Pan and Pinocchio and dreamed
+			of becoming a feature film animator. He even made primitive animation using so-called flip-books. However,
+			he assessed his chances realistically and decided that his talents lay elsewhere. Instead of pursuing a
+			career in the movie industry, he used his talent in math and studied physics and computer science at the
+			University of Utah. After graduating, he worked as a computer programmer at The Boeing Company in Seattle
+			for a short period of time, before returning to Utah to go to graduate school in fall of 1970.</p>
+		<!-- <a href="#" rel="modal:close">Close</a> -->
+	</div>
+
+	<div id="modal-2" class="modal">
+		<h3>
+			Amanda Randles
+		</h3>
+		<hr>
+		<p>Amanda Randles is an American biomedical engineer who is the Alfred Winborne and Victoria Stover Mordecai
+			Assistant Professor of Biomedical Sciences at Duke University. She is also an assistant professor of
+			biomedical engineering, computer science, and mathematics at Duke University, and a member of the Duke
+			Cancer Institute. Her research interests include high performance computing, computational fluid dynamics,
+			and biomedical simulation.</p>
+		<!-- <a href="#" rel="modal:close">Close</a> -->
+	</div>
+
+	<div id="modal-3" class="modal">
+		<h3>
+			Kurt Mehlhorn
+		</h3>
+		<hr>
+		<p>Mehlhorn graduated in 1971 from the Technical University of Munich, where he studied computer science and
+			mathematics, and earned his Ph.D. in 1974 from Cornell University under the supervision of Robert Constable.
+			Since 1975 he has been on the faculty of Saarland University in Saarbrücken, Germany, where he was chair of
+			the computer science department from 1976 to 1978 and again from 1987 to 1989. Since 1990 has been the
+			director of the Max Planck Institute for Computer Science, also in Saarbrücken. He has been on the editorial
+			boards of ten journals, a trustee of the International Computer Science Institute in Berkeley, California,
+			and a member of the board of governors of Jacobs University Bremen.</p>
+		<!-- <a href="#" rel="modal:close">Close</a> -->
+	</div>
+
+	<div id="modal-4" class="modal">
+		<h3>
+			Milind Sohoni
+		</h3>
+		<hr>
+		<p>--snip--</p>
+		<!-- <a href="#" rel="modal:close">Close</a> -->
+	</div>
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -290,7 +333,40 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+	<!-- jQuery Modal -->
+	<script type="text/javascript" charset="utf-8">
+		// Modal
+		$(function () {
+			function log_modal_event(event, modal) {
+				if (typeof console != 'undefined' && console.log) console.log("[event] " + event.type);
+			};
 
+			$(document).on($.modal.BEFORE_BLOCK, log_modal_event);
+			$(document).on($.modal.BLOCK, log_modal_event);
+			$(document).on($.modal.BEFORE_OPEN, log_modal_event);
+			$(document).on($.modal.OPEN, log_modal_event);
+			$(document).on($.modal.BEFORE_CLOSE, log_modal_event);
+			$(document).on($.modal.CLOSE, log_modal_event);
+			$(document).on($.modal.AFTER_CLOSE, log_modal_event);
+			$(document).on($.modal.AJAX_SEND, log_modal_event);
+			$(document).on($.modal.AJAX_SUCCESS, log_modal_event);
+			$(document).on($.modal.AJAX_COMPLETE, log_modal_event);
+
+			$('a[data-modal]').on('click', function () {
+				$($(this).data('modal')).modal();
+				return false;
+
+			});
+			$('a[href="#ex1"].open-modal').click(function (event) {
+				$(this).modal({
+					fadeDuration: 250
+				});
+				return false;
+			});
+		});
+	</script>
 </body>
 
 </html>
